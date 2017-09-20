@@ -23,7 +23,7 @@ define(['jquery','cookie'],function ($) {
 
   // 验证用户是否登陆了
   var flag = $.cookie('PHPSESSID');
-  if(!flag){
+  if(!flag && location.pathname != '/main/login'){
     location.href = '/main/login';
   }
   // 填充头像信息
