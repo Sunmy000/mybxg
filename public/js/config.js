@@ -13,12 +13,13 @@ require.config({
     common : '../js/common',
     login : '../js/login',
     teacherlist : '../js/teacher-list',
-    teacheradd : '../js/teacher-add'
+    teacheradd : '../js/teacher-add',
+    settings : '../js/settings'
   },
   shim : {
     bootstrap : {
       deps : ['jquery']
-    },
+    },                      
     language : {
       deps :  ['jquery','datepicker']
     },
