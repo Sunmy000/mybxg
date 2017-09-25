@@ -1,4 +1,4 @@
-define(['jquery','template','util', 'validate','form'],function ($, template,util) {
+define(['jquery','template','ckeditor','util', 'validate','form'],function ($, template,CKEDITOR,util) {
   //设置导航菜单选中
   util.setMenu('/course/add');
   //获取课程id
@@ -41,6 +41,14 @@ define(['jquery','template','util', 'validate','form'],function ($, template,uti
             $('#secondType').html(html);
           }
         });
+      });
+
+      //处理富文本
+      CKEDITOR.replace('editor',{
+        toolbarGroups : [
+        { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+        { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] }
+        ]
       });
       
       //处理表单提交
