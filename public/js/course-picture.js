@@ -85,7 +85,15 @@ define(['jquery','template','util','uploadify','jcrop','form'],function ($, temp
           this.newSelection();
           this.setSelect([x,y,w,h]);
 
+          // 设置缩略图的位置
+          $('.jcrop-thumb').css({
+            position : 'absolute',
+            top : 0,
+            left : 0
+          });
         }); 
+
+
         //监控选区的变化
         img.parent().on('cropstart cropmove cropend', function(a,b,c){
           //选取完成和变化的时候把对应的坐标数据填充到表单
